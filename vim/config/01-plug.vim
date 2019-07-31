@@ -672,8 +672,8 @@ autocmd CursorHold * call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format)
+xmap <leader>f  <Plug>(coc-format)
 
 " Use C to open coc config
 function! SetupCommandAbbrs(from, to)

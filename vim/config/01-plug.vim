@@ -128,7 +128,6 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 
 nnoremap <silent> <C-p> :FZF<CR>
-nnoremap <leader>bt :BTags<CR>
 nnoremap <leader>bl :BLines<CR>
 nnoremap <leader>bf :Buffers<CR>
 
@@ -795,6 +794,7 @@ let g:vista#renderer#enable_icon = 1
 
 " Map F9 to toggle sidebar
 nnoremap <F9> :Vista!!<CR>
+nnoremap <leader>bt :Vista finder<CR>
 
 " Re-generate the tag file on save
 Plug 'ludovicchabant/vim-gutentags'

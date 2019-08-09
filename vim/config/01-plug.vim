@@ -433,7 +433,7 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 " let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'test']
 
 let g:go_auto_sameids = 0           " auto highlight same vars
-let g:go_def_mapping_enabled = 1    " toggle the default go def mappings
+let g:go_def_mapping_enabled = 0    " toggle the default go def mappings
 
 " Turn on auto typeinfo and K mapping if floating window is not supported
 " FIXME: remove this block after neovim stable version 4.0 comes
@@ -444,14 +444,6 @@ else
   let g:go_auto_type_info = 0         " auto show the type info of cusor
   let g:go_doc_keywordprg_enabled = 0 " map K to :GoDoc, use coc-action-doHover instead
 endif
-
-" jump to def in splited vertical window
-autocmd FileType go map <buffer> <silent> <C-s><C-]> <Plug>(go-def-vertical)
-autocmd FileType go map <buffer> <silent> <C-s>] <Plug>(go-def-vertical)
-autocmd FileType go map <buffer> <silent> <C-t><C-]> <Plug>(go-def-tab)
-autocmd FileType go map <buffer> <silent> <C-t>] <Plug>(go-def-tab)
-autocmd FileType go map <buffer> <silent> <C-w><C-]> <Plug>(go-def-split)
-autocmd FileType go map <buffer> <silent> <C-w>] <Plug>(go-def-split)
 
 autocmd FileType go noremap <buffer> <silent> <leader>ga :GoAlternate<cr>
 autocmd FileType go noremap <buffer> <silent> <leader>gi :GoInfo<cr>
@@ -635,20 +627,30 @@ nmap <silent> ]c <Plug>(coc-diagnostic-next)
 
 " some key map conflicts with other plugins(e.g. vim-go), so skip specific
 " type of files
-let s:exclude_files = ['go']
-function! s:nonGoFile()
-  for ft in s:exclude_files
-    if ft ==# &filetype | return 0 | endif
-  endfor
-  return 1
-endfunction
-autocmd BufRead,BufNew * if <SID>nonGoFile() |
-      \ nmap <silent> <C-LeftMouse> <LeftMouse><Plug>(coc-definition)| endif
-autocmd BufRead,BufNew * if <SID>nonGoFile() |
-      \ nmap <silent> g<LeftMouse> <LeftMouse><Plug>(coc-definition)| endif
-autocmd BufRead,BufNew * if <SID>nonGoFile() | nmap <silent> gd <Plug>(coc-definition)| endif
+" let s:exclude_files = ['go']
+" function! s:nonGoFile()
+"   for ft in s:exclude_files
+"     if ft ==# &filetype | return 0 | endif
+"   endfor
+"   return 1
+" endfunction
+" autocmd BufRead,BufNew * if <SID>nonGoFile() |
+"       \ nmap <silent> <C-LeftMouse> <LeftMouse><Plug>(coc-definition)| endif
+" autocmd BufRead,BufNew * if <SID>nonGoFile() |
+"       \ nmap <silent> g<LeftMouse> <LeftMouse><Plug>(coc-definition)| endif
+" autocmd BufRead,BufNew * if <SID>nonGoFile() | nmap <silent> gd <Plug>(coc-definition)| endif
 
+nmap <buffer> <silent> <C-s><C-]> :<C-u>call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <buffer> <silent> <C-s>] :<C-u>call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <buffer> <silent> <C-t><C-]> :<C-u>call CocAction('jumpDefinition', 'tabe')<CR>
+nmap <buffer> <silent> <C-t>] :<C-u>call CocAction('jumpDefinition', 'tabe')<CR>
+nmap <buffer> <silent> <C-w><C-]> :<C-u>call CocAction('jumpDefinition', 'split')<CR>
+nmap <buffer> <silent> <C-w>] :<C-u>call CocAction('jumpDefinition', 'split')<CR>
+
+nmap <silent> g<LeftMouse> <LeftMouse><Plug>(coc-definition)
+nmap <silent> <C-LeftMouse> <LeftMouse><Plug>(coc-definition)
 nmap <silent> <M-LeftMouse> <LeftMouse><Plug>(coc-definition)
+nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> <leader>jd :<C-u>call CocAction('jumpDefinition', 'vsplit')<CR>
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)

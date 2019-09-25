@@ -34,3 +34,5 @@
 [format]
 [pager]
 	branch = cat
+[grep]
+	extendedRegexp = true

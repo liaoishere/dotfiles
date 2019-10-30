@@ -67,8 +67,8 @@
   "git.removedSign.hlGroup": "GitGutterDelete",
   "git.topRemovedSign.hlGroup": "GitGutterDelete",
   "git.changeRemovedSign.hlGroup": "GitGutterChangeDelete",
-  "git.addGlameToVirtualText": false,
-  "git.addGlameToBufferVar": true,
+  "git.addGBlameToVirtualText": false,
+  "git.addGBlameToBufferVar": true,
   // coc-yank
   "yank.highlight.duration": 350
 }

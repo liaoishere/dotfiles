@@ -849,10 +849,10 @@ nnoremap <F9> :Vista!!<CR>
 nnoremap <leader>bt :Vista finder<CR>
 
 " Re-generate the tag file on save
-Plug 'ludovicchabant/vim-gutentags'
-" Stop gutentags getting upset in short-lived sessions
-" https://github.com/ludovicchabant/vim-gutentags/issues/178
-let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
+" Plug 'ludovicchabant/vim-gutentags'
+" " Stop gutentags getting upset in short-lived sessions
+" " https://github.com/ludovicchabant/vim-gutentags/issues/178
+" let g:gutentags_exclude_filetypes = ['gitcommit', 'gitconfig', 'gitrebase', 'gitsendemail', 'git']
 
 " Code signature
 Plug 'kshenoy/vim-signature'

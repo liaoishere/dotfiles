@@ -479,8 +479,9 @@ let g:go_def_mode = 'gopls'
 let g:go_info_mode = 'gopls'
 let g:go_fmt_command = 'goimports'
 let g:go_metalinter_command = 'golangci-lint'
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
-" let g:go_metalinter_autosave_enabled = ['vet', 'golint', 'test']
+let g:syntastic_go_checkers = ['golint', 'govet', 'golangci-lint']
+let g:syntastic_go_gometalinter_args = ['--disable-all', '--enable=errcheck']
+let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 let g:go_auto_sameids = 0           " auto highlight same vars
 let g:go_def_mapping_enabled = 0    " toggle the default go def mappings
@@ -568,13 +569,14 @@ Plug 'chr4/nginx.vim'
 " }}}
 
 " Linters ==================================================================={{{
-Plug 'w0rp/ale'
+Plug 'dense-analysis/ale'
 let g:ale_linters = {
       \   'python': ['flake8', 'pylint'],
-      \   'go': ['golangci-lint'],
+      \   'go': ['revive'],
       \ }
 let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options = '--fast -E golint --exclude-use-default=false'
+let g:ale_go_revive_options = '-exclude=vendor/...'
 let g:ale_python_flake8_options = '--ignore=F821,E501'
 let g:ale_python_pylint_options = '--disable=C0111,C0301,R0902,R0903,R0913,R0914,R0915,E1101,E1004'
 let g:ale_sign_error = '⤫'

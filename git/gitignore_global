@@ -6,6 +6,7 @@ tags.lock
 tags.temp
 .remote-build.cfg
 .virtualgo
+.vscode
 
 #
 pipfile

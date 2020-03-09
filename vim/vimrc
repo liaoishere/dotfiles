@@ -11,7 +11,7 @@ endfor
 
 " Options setup ============================================================={{{
 
-colorscheme gruvbox
+colorscheme onedark
 set mouse=a
 set nocompatible
 set hidden

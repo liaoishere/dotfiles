@@ -695,12 +695,12 @@ nmap <silent> ]c <Plug>(coc-diagnostic-next)
 "       \ nmap <silent> g<LeftMouse> <LeftMouse><Plug>(coc-definition)| endif
 " autocmd BufRead,BufNew * if <SID>nonGoFile() | nmap <silent> gd <Plug>(coc-definition)| endif
 
-nmap <buffer> <silent> <C-s><C-]> :<C-u>call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <buffer> <silent> <C-s>] :<C-u>call CocAction('jumpDefinition', 'vsplit')<CR>
-nmap <buffer> <silent> <C-t><C-]> :<C-u>call CocAction('jumpDefinition', 'tabe')<CR>
-nmap <buffer> <silent> <C-t>] :<C-u>call CocAction('jumpDefinition', 'tabe')<CR>
-nmap <buffer> <silent> <C-w><C-]> :<C-u>call CocAction('jumpDefinition', 'split')<CR>
-nmap <buffer> <silent> <C-w>] :<C-u>call CocAction('jumpDefinition', 'split')<CR>
+nmap <silent> <C-s><C-]> :<C-u>call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> <C-s>] :<C-u>call CocAction('jumpDefinition', 'vsplit')<CR>
+nmap <silent> <C-t><C-]> :<C-u>call CocAction('jumpDefinition', 'tabe')<CR>
+nmap <silent> <C-t>] :<C-u>call CocAction('jumpDefinition', 'tabe')<CR>
+nmap <silent> <C-w><C-]> :<C-u>call CocAction('jumpDefinition', 'split')<CR>
+nmap <silent> <C-w>] :<C-u>call CocAction('jumpDefinition', 'split')<CR>
 
 nmap <silent> g<LeftMouse> <LeftMouse><Plug>(coc-definition)
 nmap <silent> <C-LeftMouse> <LeftMouse><Plug>(coc-definition)

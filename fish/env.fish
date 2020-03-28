@@ -15,6 +15,9 @@ set -gx XML_CATALOG_FILES /usr/local/etc/xml/catalog
 # Pyenv
 set -gx PYENV_ROOT /usr/local/var/pyenv
 
+# Homebrew
+set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+
 # Go
 set -gx GOPATH ~/Projects/go
 set -gx PATH $GOPATH/bin $PATH

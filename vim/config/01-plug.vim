@@ -572,9 +572,8 @@ Plug 'chr4/nginx.vim'
 " Linters ==================================================================={{{
 Plug 'dense-analysis/ale'
 let g:ale_linters = {
-      \   'python': ['flake8', 'pylint'],
-      \   'go': ['revive'],
-      \ }
+  \   'go': ['revive', 'gofmt'],
+  \ }
 let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options = '--fast -E golint --exclude-use-default=false'
 let g:ale_go_revive_options = '-exclude=vendor/...'

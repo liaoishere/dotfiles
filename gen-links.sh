@@ -37,6 +37,7 @@ LINK_PAIRS=(
     "$CUR_DIR/git/gitconfig | ~/.gitconfig"
     "$CUR_DIR/git/gitignore_global | ~/.gitignore_global"
     "$CUR_DIR/tmux/tmux.conf | ~/.tmux.conf"
+    "$CUR_DIR/karabiner/karabiner.json | ~/.config/karabiner/karabiner.json"
 )
 
 

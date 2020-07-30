@@ -635,19 +635,21 @@ hi link ALEWarning ALEWarningSign
 
 " coc.nvim =================================================================={{{
 " Installed extensions:
-" coc-lists
-" coc-snippets
-" coc-highlight
-" coc-yaml
-" coc-python
-" coc-json
-" coc-html
 " coc-css
-" coc-vimlsp
-" coc-tsserver
-" coc-tslint-plugin
-" coc-pairs
 " coc-git
+" coc-highlight
+" coc-html
+" coc-json
+" coc-lists
+" coc-pairs
+" coc-prettier
+" coc-python
+" coc-snippets
+" coc-tslint-plugin
+" coc-tsserver
+" coc-vimlsp
+" coc-yaml
+" coc-yank
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300
@@ -729,8 +731,8 @@ autocmd CursorHold * call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " Remap for format selected region
+vmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format)
-xmap <leader>f  <Plug>(coc-format)
 
 " Use C to open coc config
 function! SetupCommandAbbrs(from, to)

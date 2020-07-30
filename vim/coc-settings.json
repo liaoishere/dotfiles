@@ -70,5 +70,7 @@
   "git.addGBlameToVirtualText": false,
   "git.addGBlameToBufferVar": true,
   // coc-yank
-  "yank.highlight.duration": 350
+  "yank.highlight.duration": 350,
+  // coc-prettier
+  "prettier.tabWidth": 4
 }

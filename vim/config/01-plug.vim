@@ -97,6 +97,7 @@ Plug 'rizzatti/dash.vim'
 " Git ======================================================================={{{
 " Git wrapper, show git blame, git branch, etc.
 Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-conflicted'
 
 " Show git diff
 Plug 'airblade/vim-gitgutter'

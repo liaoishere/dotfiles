@@ -102,7 +102,7 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Change shift+delete to forward delete",
+                                "description": "Change shift+delete to shift+backslash(|)",
                                 "conditions": [
                                     {
                                         "type": "device_if",
@@ -115,22 +115,19 @@
                                         ]
                                     }
                                 ],
-                                "manipulators": [
-                                    {
-                                        "from": {
-                                            "key_code": "delete_or_backspace",
-                                            "modifiers": {
-                                                "mandatory": ["shift"]
-                                            }
-                                        },
-                                        "to": [
-                                            {
-                                                "key_code": "delete_forward"
-                                            }
-                                        ],
-                                        "type": "basic"
+                                "from": {
+                                    "key_code": "delete_or_backspace",
+                                    "modifiers": {
+                                        "mandatory": ["shift"]
                                     }
-                                ]
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "backslash",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
                             }
                         ]
                     }

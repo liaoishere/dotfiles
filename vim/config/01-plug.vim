@@ -650,6 +650,7 @@ hi link ALEWarning ALEWarningSign
 " coc-vimlsp
 " coc-yaml
 " coc-yank
+" coc-rls
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Smaller updatetime for CursorHold & CursorHoldI
 set updatetime=300

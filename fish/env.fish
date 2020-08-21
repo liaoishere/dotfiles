@@ -22,6 +22,11 @@ set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bot
 set -gx GOPATH ~/Projects/go
 set -gx PATH $GOPATH/bin $PATH
 
+# Rust
+set -gx PATH $HOME/.cargo/bin $PATH
+set -gx RUSTUP_DIST_SERVER https://mirrors.ustc.edu.cn/rust-static
+set -gx RUSTUP_UPDATE_ROOT https://mirrors.ustc.edu.cn/rust-static/rustup
+
 # GNU-sed
 set -gx PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
 

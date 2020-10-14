@@ -19,79 +19,89 @@
                         "description": "HHKB rules",
                         "manipulators": [
                             {
+                                "conditions": [
+                                    {
+                                        "description": "HHKB Hybrid type-s keyboard",
+                                        "identifiers": [
+                                            {
+                                                "product_id": 33,
+                                                "vendor_id": 1278
+                                            }
+                                        ],
+                                        "type": "device_if"
+                                    }
+                                ],
                                 "description": "Change shift+esc to shift+`(~)",
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "shift"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde",
+                                        "modifiers": [
+                                            "shift"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "HHKB Hybrid type-s keyboard",
                                         "identifiers": [
                                             {
                                                 "product_id": 33,
                                                 "vendor_id": 1278
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
-                                "from": {
-                                    "key_code": "escape",
-                                    "modifiers": {
-                                        "mandatory": ["shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
                                 "description": "Change command+esc to cmd+`",
-                                "conditions": [
-                                    {
-                                        "type": "device_if",
-                                        "description": "HHKB Hybrid type-s keyboard",
-                                        "identifiers": [
-                                            {
-                                                "product_id": 33,
-                                                "vendor_id": 1278
-                                            }
-                                        ]
-                                    }
-                                ],
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
-                                        "mandatory": ["command"]
+                                        "mandatory": [
+                                            "command"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "grave_accent_and_tilde",
-                                        "modifiers": ["command"]
+                                        "modifiers": [
+                                            "command"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
                             },
                             {
-                                "description": "Change option+esc to `",
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "HHKB Hybrid type-s keyboard",
                                         "identifiers": [
                                             {
                                                 "product_id": 33,
                                                 "vendor_id": 1278
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
+                                "description": "Change option+esc to `",
                                 "from": {
                                     "key_code": "escape",
                                     "modifiers": {
-                                        "mandatory": ["option"]
+                                        "mandatory": [
+                                            "option"
+                                        ]
                                     }
                                 },
                                 "to": [
@@ -102,29 +112,33 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "Change shift+delete to shift+backslash(|)",
                                 "conditions": [
                                     {
-                                        "type": "device_if",
                                         "description": "HHKB Hybrid type-s keyboard",
                                         "identifiers": [
                                             {
                                                 "product_id": 33,
                                                 "vendor_id": 1278
                                             }
-                                        ]
+                                        ],
+                                        "type": "device_if"
                                     }
                                 ],
+                                "description": "Change shift+delete to shift+backslash(|)",
                                 "from": {
                                     "key_code": "delete_or_backspace",
                                     "modifiers": {
-                                        "mandatory": ["shift"]
+                                        "mandatory": [
+                                            "shift"
+                                        ]
                                     }
                                 },
                                 "to": [
                                     {
                                         "key_code": "backslash",
-                                        "modifiers": ["shift"]
+                                        "modifiers": [
+                                            "shift"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -133,7 +147,21 @@
                     }
                 ]
             },
-            "devices": [],
+            "devices": [
+                {
+                    "disable_built_in_keyboard_if_exists": true,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 33,
+                        "vendor_id": 1278
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": false,
+                    "simple_modifications": []
+                }
+            ],
             "fn_function_keys": [
                 {
                     "from": {

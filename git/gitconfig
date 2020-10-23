@@ -36,3 +36,5 @@
 	branch = cat
 [grep]
 	extendedRegexp = true
+[pull]
+	ff = only

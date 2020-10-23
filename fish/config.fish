@@ -16,7 +16,7 @@ source ~/.config/fish/env.fish
 source $OMF_PATH/init.fish
 
 # pipenv
-set pipenv_fish_fancy yes
+set -gx pipenv_fish_fancy yes
 eval (pipenv --completion)
 set -gx PIPENV_PYPI_MIRROR https://mirrors.ustc.edu.cn/pypi/web/simple
 

@@ -15,6 +15,10 @@ set -gx XML_CATALOG_FILES /usr/local/etc/xml/catalog
 # Pyenv
 set -gx PYENV_ROOT /usr/local/var/pyenv
 
+# Pipenv
+set pipenv_fish_fancy yes
+set -gx PIPENV_PYPI_MIRROR https://mirrors.ustc.edu.cn/pypi/web/simple
+
 # Homebrew
 set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 
@@ -38,9 +42,3 @@ set -gx GPG_TTY (tty)
 set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden -E 'bundles/' -E '.git/'"
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 set -gx FZF_DEFAULT_OPTS '--height 50% --layout=reverse --border'
-
-# alias
-alias v='vim'
-alias l='ls -lvh'
-alias h='history'
-alias tailf='tail -f'

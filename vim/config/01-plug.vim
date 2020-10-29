@@ -374,7 +374,7 @@ endfunction
 
 " Color Themes =============================================================={{{
 " Plug 'flazz/vim-colorschemes'
-Plug 'liaoishere/vim-one'        " Fix comment color of 'rakr/vim-one'
+Plug 'paco0x/vim-one'        " Fix comment color of 'rakr/vim-one'
 let g:one_allow_italics = 1
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -506,9 +506,6 @@ let g:vim_markdown_folding_disabled=1
 " map <F12> :InstantMarkdownPreview<CR>
 " }}}
 
-" Puppet ===================================================================={{{
-Plug 'godlygeek/tabular'
-Plug 'liaoishere/vim-puppet'
 " }}}
 
 " Nginx ====================================================================={{{

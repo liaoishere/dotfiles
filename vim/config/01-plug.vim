@@ -139,6 +139,7 @@ command! ProjectFiles execute 'Files' s:find_git_root()
 nnoremap <silent> <C-p> :ProjectFiles<CR>
 nnoremap <leader>bl :BLines<CR>
 nnoremap <leader>bf :Buffers<CR>
+nnoremap <leader>bt :BTags<CR>
 
 " Mapping selecting mappings
 nmap <leader><tab> <plug>(fzf-maps-n)
@@ -445,7 +446,7 @@ endif
 
 autocmd FileType go noremap <buffer> <silent> <leader>ga :GoAlternate<cr>
 autocmd FileType go noremap <buffer> <silent> <leader>gi :GoInfo<cr>
-autocmd FileType go noremap <buffer> <silent> <leader>bt :GoDecls<cr>
+" autocmd FileType go noremap <buffer> <silent> <leader>bt :GoDecls<cr>
 autocmd FileType go noremap <buffer> <silent> <leader>gt :GoDeclsDir<cr>
 autocmd FileType go noremap <buffer> <silent> <leader>gb :GoBuild<cr>
 autocmd FileType go noremap <buffer> <silent> <leader>r :GoRun<cr>

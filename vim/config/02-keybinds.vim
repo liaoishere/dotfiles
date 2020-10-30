@@ -82,15 +82,15 @@ noremap <F7> :exec exists('syntax_on') ? 'syn off' : 'syn on'<CR>
 """
 
 " Tab Operations ============================================================{{{
-map <leader>th :tabfirst<cr>
-map <leader>tl :tablast<cr>
+noremap <leader>th :tabfirst<cr>
+noremap <leader>tl :tablast<cr>
 
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprev<cr>
+noremap <leader>tn :tabnext<cr>
+noremap <leader>tp :tabprev<cr>
 
-map <leader>te :tabedit<cr>
-map <leader>td :tabclose<cr>
-map <leader>tm :tabm<cr>
+noremap <leader>te :tabedit<cr>
+noremap <leader>td :tabclose<cr>
+noremap <leader>tm :tabm<cr>
 
 " Toggles between the active and last active tab "
 " The first tab is always 1 "

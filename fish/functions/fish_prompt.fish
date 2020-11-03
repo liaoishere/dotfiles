@@ -3,12 +3,6 @@
 # You can override some default options in your config.fish:
 #   set -g theme_display_git_untracked no
 
-function _git_branch_name
-  echo (command git symbolic-ref HEAD 2> /dev/null; \
-       or command git rev-parse --short HEAD 2> /dev/null) \
-       | sed -e 's|^refs/heads/||'
-end
-
 function _is_git_dirty
   set -l show_untracked (git config --bool bash.showUntrackedFiles)
   if [ "$theme_display_git_untracked" = 'no' -o "$show_untracked" = 'false' ]

@@ -40,26 +40,6 @@ LINK_PAIRS=(
     "$CUR_DIR/karabiner/karabiner.json | ~/.config/karabiner/karabiner.json"
 )
 
-
-function addlinks() {
-    if [[ $# -ne 2 ]]; then
-        err "Arg number must eq 2"
-    fi
-
-    src=$1
-    dest=$2
-    if [[ ! -d $src ]]; then
-        err "$src must be a dir"
-    fi
-
-    for file in $(ls $src); do
-        link_pair="$src/$file | $dest/$file"
-        LINK_PAIRS+=("$link_pair")
-    done
-}
-
-addlinks "$CUR_DIR/fish/functions" $FISH_CONFIG_DIR/functions
-
 for pair in "${LINK_PAIRS[@]}"; do
     src=$(echo $pair | awk -F'\|' '{print $1}' | awk '{$1=$1};1')
     dest=$(echo $pair | awk -F'\|' '{print $2}' | awk '{$1=$1};1')

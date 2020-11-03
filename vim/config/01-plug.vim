@@ -136,7 +136,7 @@ endfunction
 
 command! ProjectFiles execute 'Files' s:find_git_root()
 
-nnoremap <silent> <C-p> :ProjectFiles<CR>
+nnoremap <silent> <C-p> :Files<CR>
 nnoremap <leader>bl :BLines<CR>
 nnoremap <leader>bf :Buffers<CR>
 nnoremap <leader>bt :BTags<CR>

@@ -38,6 +38,8 @@ set -gx PATH /usr/local/opt/gnu-sed/libexec/gnubin $PATH
 set -gx GPG_TTY (tty)
 
 # FZF
+# default bat theme, used by fzf preview script
+set -gx BAT_THEME 'base16-256'
 #set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden -E 'bundles/' -E '.git/'"
 set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --no-ignore-vcs -I"
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND

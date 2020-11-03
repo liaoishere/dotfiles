@@ -4,6 +4,11 @@ let &rtp.=','.s:curdir
 " Set leader key
 let mapleader = ','
 
+" Roughly set $SHELL to /bin/bash cause it's the most compatible shell with scripts in
+" vim plugins. Some bugs can't be easily fixed in vim plugins such as: https://github.com/liuchengxu/vista.vim/issues/305
+" remove ^@ charactors in system function output, ^@ means null or linefeed
+let $SHELL = system('which bash')[:-2]
+
 " Load configs
 for fpath in split(globpath(expand(s:curdir.'/config'), '*.vim'), '\n')
   exe 'source' fpath

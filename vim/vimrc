@@ -16,7 +16,7 @@ endfor
 
 " Options setup ============================================================={{{
 
-colorscheme one
+colorscheme dracula
 set mouse=a
 set nocompatible
 set hidden
@@ -94,9 +94,9 @@ hi link CocWarningSign ALEWarningSign
 " lightline setup ==========================================================={{{
 
 " wombat tabline colorscheme customization
-let s:palette = g:lightline#colorscheme#wombat#palette
-let s:palette.tabline.tabsel = [ [ '#242424', '#8ac6f2', 235, 117, 'bold' ] ]
-unlet s:palette
+" let s:palette = g:lightline#colorscheme#wombat#palette
+" let s:palette.tabline.tabsel = [ [ '#242424', '#8ac6f2', 235, 117, 'bold' ] ]
+" unlet s:palette
 
 " }}}
 

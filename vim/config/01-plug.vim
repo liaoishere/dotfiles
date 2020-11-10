@@ -270,7 +270,7 @@ function! CocCurrentFunction()
 endfunction
 
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'dracula',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch'],
@@ -414,7 +414,8 @@ nnoremap <leader>ig :IndentLinesToggle <CR>
 Plug 'fatih/vim-go', { 'for': 'go' }
 " enrich highlighting
 let g:go_highlight_functions = 1
-let g:go_highlight_methods = 1
+let g:go_highlight_function_parameters = 1
+let g:go_highlight_function_calls = 1
 let g:go_highlight_fields = 1
 let g:go_highlight_types = 1
 let g:go_highlight_operators = 1

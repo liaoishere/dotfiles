@@ -15,7 +15,7 @@ set -gx fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # FZF
 # default bat theme, used by fzf preview script
-set -gx BAT_THEME 'base16-256'
+set -gx BAT_THEME 'Dracula'
 #set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden -E 'bundles/' -E '.git/'"
 set -gx FZF_DEFAULT_COMMAND "fd --type f --hidden --no-ignore-vcs -I"
 set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND

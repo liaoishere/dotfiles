@@ -34,6 +34,7 @@ LINK_PAIRS=(
     "$CUR_DIR/vim/coc-settings.json | ~/.vim/coc-settings.json"
     "$CUR_DIR/fish/config.fish | $FISH_CONFIG_DIR/config.fish"
     "$CUR_DIR/fish/env.fish | $FISH_CONFIG_DIR/conf.d/env.fish"
+    "$CUR_DIR/zsh/zshrc | ~/.zshrc"
     "$CUR_DIR/git/gitconfig | ~/.gitconfig"
     "$CUR_DIR/git/gitignore_global | ~/.gitignore_global"
     "$CUR_DIR/tmux/tmux.conf | ~/.tmux.conf"

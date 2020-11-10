@@ -1,59 +1,35 @@
-source /usr/local/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
+source $(dirname $(readlink ${(%):-%x}))/zshenv
 
+
+export PATH=~/Projects/go/bin:$PATH
+#
+# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen bundle git
 antigen bundle autojump
+antigen bundle command-not-found
+antigen bundle fzf
+antigen bundle git
+antigen bundle history
 antigen bundle pip
-antigen bundle docker
-antigen bundle brew
-antigen bundle history-substring-search
+antigen bundle pipenv
+antigen bundle zsh-history-substring-search.zsh
 
-## Bundles
-antigen bundle zsh-users/zsh-syntax-highlighting
+# Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-completions
-antigen bundle zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle dracula/zsh
 antigen bundle Tarrasch/zsh-bd
+antigen bundle docker/cli contrib/completion/zsh
+antigen bundle docker/compose contrib/completion/zsh
 
 # Load the theme.
-antigen theme robbyrussell
+antigen theme dracula/zsh dracula
 
-# Tell Antigen that you're done.
 antigen apply
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Bindkey settings
-bindkey "${terminfo[kcuu1]}" history-substring-search-up
-bindkey "${terminfo[kcud1]}" history-substring-search-down
-bindkey "^P" up-line-or-search
-bindkey "^N" down-line-or-search
-
-# Color
-zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
-autoload -Uz compinit
-compinit
-
-# Envs
-export ANSIBLE_CONFIG=$HOME/.ansible
-export ANSIBLE_INVENTORY=$HOME/.ansible/hosts
-export GEM_SOURCE=https://ruby.taobao.org
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US.UTF-8"
-export GREP_OPTIONS='--color=auto'
-export PYENV_ROOT=/usr/local/var/pyenv
-export GPG_TTY=$(tty)
-export GOPATH=~/Projects/go
-export PATH=$GOPATH/bin:$PATH
-# GNU-sed
-export PATH=/usr/local/opt/gnu-sed/libexec/gnubin $PATH:$PATH
-
-# Alias
-alias ago="ag --ignore-dir vendor"
-alias rgo="rg -g '!vendor/*'"
-alias pushorigin='git push origin --set-upstream $(git branch | grep "^*" | tr -d "* ")'
-
-# vg
 command -v vg >/dev/null 2>&1 && eval "$(vg eval --shell zsh)"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"

@@ -1,28 +1,47 @@
 # environment
-export EDITOR=vim
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LC_TYPE="utf-8"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export XML_CATALOG_FILES=/usr/local/etc/xml/catalog
 
-# virtualenvwrapper
-export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python
-export WORKON_HOME=~/virtualenvs
-[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
-[ -f /etc/bash_completion.d/virtualenvwrapper ] && source /etc/bash_completion.d/virtualenvwrapper
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
-export PIP_RESPECT_VIRTUALENV=true
-
-# tmux
-#export ZSH_TMUX_AUTOSTART=true
-#export ZSH_TMUX_AUTOQUIT=true
-
-# ansible
-export ANSIBLE_CONFIG=$HOME/.ansible/
+# Ansible
+export ANSIBLE_CONFIG=$HOME/.ansible
 export ANSIBLE_INVENTORY=$HOME/.ansible/hosts
+export ANSIBLE_NOCOWS=1
 
-# autosuggestion
-export AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1
+# Homebrew
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+export fish_user_paths="/usr/local/sbin" $fish_user_paths
 
-export PYENV_ROOT=/usr/local/var/pyenv
+# FZF
+# default bat theme, used by fzf preview script
+export BAT_THEME='Dracula'
+#export FZF_DEFAULT_COMMAND "fd --type f --hidden -E 'bundles/' -E '.git/'"
+export FZF_DEFAULT_COMMAND="fd --type f --hidden --no-ignore-vcs -I"
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+export FZF_DEFAULT_OPTS="--height 50% --layout=reverse --border"
+
+# GNU-sed
+export PATH=/usr/local/opt/gnu-sed/libexec/gnubin:$PATH
+
+# GPG
+export GPG_TTY=$(tty)
+
+# Go
 export GOPATH=~/Projects/go
-export PATH=$PATH:$GOPATH/bin
+export PATH=$GOPATH/bin:$PATH
+
+# Pyenv
+export PYENV_ROOT=/usr/local/var/pyenv
+
+# Pipenv
+export pipenv_fish_fancy=yes
+export PIPENV_PYPI_MIRROR=https://mirrors.ustc.edu.cn/pypi/web/simple
+
+# Ruby
+export GEM_SOURCE=https://ruby.taobao.org
+
+# Rust
+export PATH=$HOME/.cargo/bin $PATH
+export RUSTUP_DIST_SERVER=https://mirrors.ustc.edu.cn/rust-static
+export RUSTUP_UPDATE_ROOT=https://mirrors.ustc.edu.cn/rust-static/rustup
+

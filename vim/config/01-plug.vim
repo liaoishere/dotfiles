@@ -421,6 +421,11 @@ let g:go_highlight_types = 1
 let g:go_highlight_operators = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_build_constraints = 1
+let g:go_highlight_generate_tags = 0
+let g:go_highlight_format_strings = 1
+let g:go_highlight_variable_declarations = 0
+let g:go_highlight_diagnostic_errors = 1
+let g:go_highlight_diagnostic_warnings = 1
 let g:go_gopls_enabled = 0
 
 let g:go_def_reuse_buffer = 1

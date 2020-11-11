@@ -1,8 +1,5 @@
 source $(brew --prefix)/share/antigen/antigen.zsh
 source $(dirname $(readlink ${(%):-%x}))/zshenv
-
-
-export PATH=~/Projects/go/bin:$PATH
 #
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh

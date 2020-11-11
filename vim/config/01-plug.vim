@@ -379,6 +379,12 @@ Plug 'paco0x/vim-one'        " Fix comment color of 'rakr/vim-one'
 let g:one_allow_italics = 1
 Plug 'joshdick/onedark.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+let g:dracula_bold = 1
+let g:dracula_italic = 0
+let g:dracula_underline = 1
+let g:dracula_undercurl = 1
+let g:dracula_inverse = 1
+let g:dracula_colorterm = 1
 Plug 'colepeters/spacemacs-theme.vim'
 Plug 'fatih/molokai'
 let g:molokai_original = 1

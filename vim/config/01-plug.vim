@@ -275,7 +275,7 @@ let g:lightline = {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch'],
       \             [ 'readonly', 'relativepath', 'modified' ],
-      \             ['cocstatus', 'currentfunction' ] ],
+      \             [ 'cocstatus', 'currentfunction' ] ],
       \   'right': [ [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ],
       \              [ 'lineinfo' ],
       \              [ 'percent' ],
@@ -599,6 +599,7 @@ hi link ALEWarning ALEWarningSign
 " coc-pairs
 " coc-prettier
 " coc-python
+" coc-pyright
 " coc-snippets
 " coc-tslint-plugin
 " coc-tsserver

@@ -7,6 +7,7 @@ alias tailf='tail -f'
 # Fundle init
 if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
 fundle plugin 'dracula/fish'
+fundle plugin 'jhillyerd/plugin-git'
 fundle plugin 'oh-my-fish/plugin-osx'
 fundle plugin 'edc/bass'
 fundle plugin 'danhper/fish-ssh-agent'

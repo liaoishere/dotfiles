@@ -72,5 +72,7 @@
   // coc-yank
   "yank.highlight.duration": 350,
   // coc-prettier
-  "prettier.tabWidth": 4
+  "prettier.tabWidth": 4,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": ["--ignore=F821,E501"]
 }

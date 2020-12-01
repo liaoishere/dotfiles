@@ -4,6 +4,11 @@ let &rtp.=','.s:curdir
 " Set leader key
 let mapleader = ','
 
+" let s:nvim_py = '/usr/local/var/pyenv/versions/py3nvim/bin/python'
+" if filereadable(expand('~/.vimrc'))
+  " let g:python3_host_prog = s:nvim_py
+" end
+
 " Roughly set $SHELL to /bin/bash cause it's the most compatible shell with scripts in
 " vim plugins. Some bugs can't be easily fixed in vim plugins such as: https://github.com/liuchengxu/vista.vim/issues/305
 " remove ^@ charactors in system function output, ^@ means null or linefeed

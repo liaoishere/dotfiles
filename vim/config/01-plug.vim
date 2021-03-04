@@ -530,7 +530,7 @@ Plug 'dense-analysis/ale'
 let g:ale_disable_lsp = 1
 let g:ale_linters = {
   \   'go': ['revive', 'gofmt'],
-  \   'python': ['flake8', 'pylint'],
+  \   'python': ['flake8'],
   \ }
 let g:ale_go_golangci_lint_package = 1
 let g:ale_go_golangci_lint_options = '--fast -E golint --exclude-use-default=false'
@@ -601,7 +601,7 @@ hi link ALEWarning ALEWarningSign
 " coc-lists
 " coc-pairs
 " coc-prettier
-" coc-python
+" coc-pyright
 " coc-snippets
 " coc-tslint-plugin
 " coc-tsserver

@@ -38,3 +38,5 @@
 	extendedRegexp = true
 [pull]
 	ff = only
+[url "git@github.xsky.com:"]
+	insteadOf = git://github.xsky.com

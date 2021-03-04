@@ -7,6 +7,7 @@ tags.temp
 .remote-build.cfg
 .virtualgo
 .vscode
+.vim
 
 #
 pipfile

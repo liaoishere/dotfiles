@@ -398,6 +398,8 @@ set background=dark
 
 
 " Code tools ================================================================{{{
+" Tree sitter
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Auto complete for quote marks
 Plug 'Raimondi/delimitMate'

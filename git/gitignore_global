@@ -12,3 +12,6 @@ tags.temp
 #
 pipfile
 pipfile.lock
+
+#
+.nvmrc

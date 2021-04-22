@@ -49,3 +49,6 @@ set -gx GEM_SOURCE https://ruby.taobao.org
 set -gx PATH $HOME/.cargo/bin $PATH
 set -gx RUSTUP_DIST_SERVER https://mirrors.ustc.edu.cn/rust-static
 set -gx RUSTUP_UPDATE_ROOT https://mirrors.ustc.edu.cn/rust-static/rustup
+
+# NVM
+set -gx NVM_DIR $HOME/.nvm

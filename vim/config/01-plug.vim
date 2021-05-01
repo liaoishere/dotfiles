@@ -418,6 +418,11 @@ let g:indentLine_char = '|'
 let g:indentLine_enabled = 0
 nnoremap <leader>ig :IndentLinesToggle <CR>
 
+" Rust ======================================================================{{{
+Plug 'rust-lang/rust.vim'
+let g:rustfmt_autosave = 1
+" }}}
+
 " Golang ===================================================================={{{
 Plug 'fatih/vim-go', { 'for': 'go' }
 " enrich highlighting

@@ -22,16 +22,8 @@
 [core]
     excludesfile = /Users/Liao/.gitignore_global
 	autocrlf = input
-	pager = more -r
-    pager = less -+F -+X
+    pager = delta
 	editor = /usr/local/bin/vim
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path =
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[format]
 [pager]
 	branch = cat
 [grep]
@@ -42,3 +34,32 @@
 	insteadOf = git://github.xsky.com
 [http "https://github.com"]
 	proxy = socks5://127.0.0.1:7891
+
+[delta]
+    features = custom
+    syntax-theme = Dracula
+[interactive]
+    diffFilter = delta --color-only
+
+[delta "custom"]
+    # author: https://github.com/clnoll
+    commit-decoration-style = bold box ul "#34fd50"
+    dark = true
+    file-decoration-style = none
+    file-style = omit
+    hunk-header-decoration-style = "#6272a4" box ul
+    hunk-header-file-style = "#999999"
+    hunk-header-line-number-style = bold "#EED835"
+    hunk-header-style = file line-number syntax
+    line-numbers = true
+    line-numbers-left-style = black
+    line-numbers-minus-style = "#EE356A"
+    line-numbers-plus-style = "#13CCE7"
+    line-numbers-right-style = black
+    line-numbers-zero-style = "#999999"
+    minus-emph-style = normal "#BF0A3E"
+    minus-style = normal "#844C5C"
+    plus-emph-style = syntax "#198494"
+    plus-style = syntax "#104850"
+    side-by-side = true
+    syntax-theme = Vibrant Sunburst

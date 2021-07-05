@@ -15,7 +15,7 @@ set -gx ANSIBLE_INVENTORY $HOME/.ansible/hosts
 set -gx ANSIBLE_NOCOWS 1
 
 # Homebrew
-set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
+#set -gx HOMEBREW_BOTTLE_DOMAIN https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles
 set -gx fish_user_paths "/usr/local/sbin" $fish_user_paths
 
 # FZF

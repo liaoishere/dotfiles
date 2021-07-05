@@ -17,7 +17,7 @@ let g:lt_location_list_toggle_map = '<leader>l'
 let g:lt_quickfix_list_toggle_map = '<leader>bq'
 
 " System copy
-Plug 'christoomey/vim-system-copy'
+" Plug 'christoomey/vim-system-copy'
 
 " For tmux navigator Ctrl-hjkl
 Plug 'christoomey/vim-tmux-navigator'
@@ -49,6 +49,9 @@ Plug 'tpope/vim-repeat'
 Plug 'bronson/vim-trailing-whitespace'
 map <leader><space> :FixWhitespace<cr>
 let g:extra_whitespace_ignored_filetypes = ['defx']
+
+" Auto pair
+Plug 'jiangmiao/auto-pairs'
 
 " Align statements
 Plug 'junegunn/vim-easy-align'
@@ -109,52 +112,68 @@ nnoremap <leader>gs :GitGutterToggle<CR>
 
 
 " FZF ======================================================================={{{
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-autocmd! FileType fzf
-autocmd  FileType fzf set laststatus=0 noshowmode noruler
-  \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+" Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf.vim'
+" autocmd! FileType fzf
+" autocmd  FileType fzf set laststatus=0 noshowmode noruler
+"   \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+" 
+" " Command for git grep
+" " - fzf#vim#grep(command, with_column, [options], [fullscreen])
+" command! -bang -nargs=* GGrep
+"   \ call fzf#vim#grep(
+"   \   'git grep --line-number '.shellescape(<q-args>), 0,
+"   \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+" 
+" " Rgo do search in directories exclude vendor dir
+" command! -bang -nargs=* Rgo
+"   \ call fzf#vim#grep(
+"   \   'rg -g "!vendor/*" --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+"   \   <bang>0 ? fzf#vim#with_preview('up:60%')
+"   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+"   \   <bang>0)
+" 
+" function! s:find_git_root()
+"   return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+" endfunction
+" 
+" command! ProjectFiles execute 'Files' s:find_git_root()
+" 
+" nnoremap <silent> <C-p> :Files<CR>
+" nnoremap <leader>bl :BLines<CR>
+" nnoremap <leader>bf :Buffers<CR>
+" nnoremap <leader>bt :BTags<CR>
+" 
+" " Mapping selecting mappings
+" nmap <leader><tab> <plug>(fzf-maps-n)
+" xmap <leader><tab> <plug>(fzf-maps-x)
+" omap <leader><tab> <plug>(fzf-maps-o)
+" 
+" " Insert mode completion
+" imap <c-x><c-k> <plug>(fzf-complete-word)
+" imap <c-x><c-f> <plug>(fzf-complete-path)
+" imap <c-x><c-j> <plug>(fzf-complete-file-ag)
+" imap <c-x><c-l> <plug>(fzf-complete-line)
+" 
+" " Advanced customization using autoload functions
+" inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
+" 
+" }}}
 
-" Command for git grep
-" - fzf#vim#grep(command, with_column, [options], [fullscreen])
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep(
-  \   'git grep --line-number '.shellescape(<q-args>), 0,
-  \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
 
-" Rgo do search in directories exclude vendor dir
-command! -bang -nargs=* Rgo
-  \ call fzf#vim#grep(
-  \   'rg -g "!vendor/*" --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
+" Telescope ================================================================={{{
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+nmap <c-p> :Telescope git_files<cr>
+nmap <leader>pp :Telescope find_files<cr>
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fj :Telescope treesitter<cr>
 
-function! s:find_git_root()
-  return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
-
-command! ProjectFiles execute 'Files' s:find_git_root()
-
-nnoremap <silent> <C-p> :Files<CR>
-nnoremap <leader>bl :BLines<CR>
-nnoremap <leader>bf :Buffers<CR>
-nnoremap <leader>bt :BTags<CR>
-
-" Mapping selecting mappings
-nmap <leader><tab> <plug>(fzf-maps-n)
-xmap <leader><tab> <plug>(fzf-maps-x)
-omap <leader><tab> <plug>(fzf-maps-o)
-
-" Insert mode completion
-imap <c-x><c-k> <plug>(fzf-complete-word)
-imap <c-x><c-f> <plug>(fzf-complete-path)
-imap <c-x><c-j> <plug>(fzf-complete-file-ag)
-imap <c-x><c-l> <plug>(fzf-complete-line)
-
-" Advanced customization using autoload functions
-inoremap <expr> <c-x><c-k> fzf#vim#complete#word({'left': '15%'})
-
+nmap <leader><leader> :Telescope commands<cr>
 " }}}
 
 
@@ -393,13 +412,18 @@ let g:rehash256 = 1
 Plug 'morhetz/gruvbox'
 let g:gruvbox_italic=1
 
+Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'sainnhe/sonokai'
+let g:sonokai_style = 'atlantis'
+Plug 'mhartington/oceanic-next'
+
 set background=dark
 " }}}
 
 
 " Code tools ================================================================{{{
 " Tree sitter
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 
 " Auto complete for quote marks
 Plug 'Raimondi/delimitMate'
@@ -843,6 +867,40 @@ let g:quickrun_no_default_key_mappings = 1
 nmap <Leader>r <Plug>(quickrun)
 map <F10> :QuickRun<CR>
 " }}}
+
+" Completion-nvim ==========================================================={{{
+" " A async completion framework aims to provide completion to neovim's built in LSP written in Lua
+" Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-treesitter/completion-treesitter'
+" Plug 'steelsojka/completion-buffers'
+" 
+" autocmd BufEnter * lua require'completion'.on_attach()
+" 
+" " Use <Tab> and <S-Tab> to navigate through popup menu
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" 
+" " Set completeopt to have a better completion experience
+" set completeopt=menuone,noinsert,noselect
+" 
+" " Avoid showing message extra message when using completion
+" set shortmess+=c
+" 
+" let g:completion_sorting = "length"
+" let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+" let g:completion_trigger_keyword_length = 2
+" let g:completion_timer_cycle = 200
+" let g:completion_chain_complete_list = {
+"       \'default' : [
+" 	\    {'complete_items': ['lsp', 'buffers', 'ts']},
+" 	\    {'mode': '<c-p>'},
+" 	\    {'mode': '<c-n>'}
+" 	\],
+" 	\'TelescopePrompt': []
+" 	\}
+" 
+" " Quickstart configurations for the Nvim LSP client
+" Plug 'neovim/nvim-lspconfig'
 
 " }}}
 

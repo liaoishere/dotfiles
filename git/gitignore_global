@@ -10,8 +10,4 @@ tags.temp
 .vim
 
 #
-pipfile
-pipfile.lock
-
-#
 .nvmrc
